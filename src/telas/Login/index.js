@@ -12,6 +12,16 @@ export default function Login({ navigation }) {
 
   const estilo = estilos(temaEscolhido);
 
+  function logandoNoSistema() {
+    const resultado = login(email, senha);
+    if(resultado == 'ok'){
+      navigation.navigate('Principal');
+    }
+    else {
+        Alert.alert(resultado)
+    }
+  }
+
   return (
     <View style={estilo.container}>
       <StatusBar />
@@ -33,12 +43,13 @@ export default function Login({ navigation }) {
           autoCapitalize="none"
           value={senha}
           onChangeText={setSenha}
+          secureTextEntry
         />
       </View>
 
       <TouchableOpacity
         style={estilo.botao}
-        onPress={() => navigation.navigate('Principal')}
+        onPress={() => logandoNoSistema()}
       >
         <Text style={estilo.botaoTexto}>Entrar</Text>
       </TouchableOpacity>
