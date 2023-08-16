@@ -2,11 +2,13 @@ import { useState, useContext } from "react";
 import { Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native';
 import { estilos } from './estilos';
 import { TemaContext } from "../../context/TemaContext";
+import { AutenticacaoContext } from "../../context/AutenticacaoContext";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const { temaEscolhido } = useContext(TemaContext);
+  const { login } = useContext(AutenticacaoContext);
 
   const estilo = estilos(temaEscolhido);
 
