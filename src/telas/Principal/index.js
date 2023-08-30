@@ -7,11 +7,12 @@ import { Feather } from 'react-native-vector-icons'
 import MaterialCommunityIcons from 'react-native-vector-icons/Feather';
 import { TemaContext } from "../../context/TemaContext";
 import { AutenticacaoContext } from "../../context/AutenticacaoContext";
+import { ProdutosContext } from "../../context/ProdutosContext";
 
 export default function Principal({navigation}) {
-  const ultimosVistos = []
   const { temaEscolhido } = useContext(TemaContext);
   const { usuario } = useContext(AutenticacaoContext);
+  const { quantidade,  ultimosVistos } = useContext(ProdutosContext);
 
   const estilo = estilos(temaEscolhido);
 

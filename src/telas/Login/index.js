@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, StatusBar, Alert } from 'react-native';
 import { estilos } from './estilos';
 import { TemaContext } from "../../context/TemaContext";
 import { AutenticacaoContext } from "../../context/AutenticacaoContext";
